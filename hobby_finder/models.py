@@ -14,12 +14,12 @@ class Events(models.Model):
 
 
 '''
-# TODO: 
+# TODO:
 We need to figure out a one to many relationship between tags and Events
 '''
 
 
-class Hobby_Tags(models.Model):
+class Tags(models.Model):
 
     '''
     Create the tags table in the databases
