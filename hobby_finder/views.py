@@ -6,7 +6,11 @@ from django.shortcuts import (
 
 
 def homepage(request):
-    return render(request, 'base.html')
+    if request.user.is_authenticated:
+        ... # Do something for logged-in users.
+    else:
+        return render(request, 'base.html')
+
 
 
 def hobby(request):
@@ -18,7 +22,3 @@ def events(request):
 
 
 #                                           CHECK USER AUTHENTICATION
-#     if request.user.is_authenticated:
-#     ... # Do something for logged-in users.
-# else:
-#     ... # Do something for anonymous users.
