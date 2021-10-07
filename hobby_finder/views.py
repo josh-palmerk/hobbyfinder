@@ -9,6 +9,14 @@ def homepage(request):
     return render(request, 'base.html')
 
 
+def hobby(request):
+    return render(request, 'hobby.html')
+
+
+def events(request):
+    return render(request, 'events.html')
+
+
 #                                           CHECK USER AUTHENTICATION
 #     if request.user.is_authenticated:
 #     ... # Do something for logged-in users.
