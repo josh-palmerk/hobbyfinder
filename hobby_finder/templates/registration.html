@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+  <div style="text-align: left;">
+    <form class="register" action="" method="POST" >
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" name="Create User">
+    </form>
+
+  </div>
+
+
+{% endblock %}

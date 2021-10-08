@@ -1,16 +1,27 @@
-<!DOCTYPE html><dog>
-  
-</dog>
+
+{% load static %}
+<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Home</title>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'custom.css'%}">
   </head>
   <body>
-    <h1>This is the main page</h1>
+    <div class="nes-container is-rounded" id="base_banner">
+      <h1 id="banner_title">This is the title banner</h1>
+        {% if user.is_authenticated %}
+          <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+        {% else %}
+          <p>Welcome, new user. Please log in.</p>
+        {% endif %}
+    </div>
+
     {% block content %}
     {% endblock %}
-    {% block hobby %}
+    {% block events %}
     {% endblock %}
   </body>
 </html>

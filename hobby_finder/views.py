@@ -4,9 +4,15 @@ from django.shortcuts import (
     render
 )
 
+from django.contrib.auth.forms import UserCreationForm
+# from .models import Events
+
 
 def homepage(request):
-    return render(request, 'base.html')
+    if request.user.is_authenticated:
+        return render(request, 'events.html')
+    else:
+        return render(request, 'base.html')
 
 
 def hobby(request):
@@ -14,11 +20,20 @@ def hobby(request):
 
 
 def events(request):
-    return render(request, 'events.html')
+    events_object = Events.objects.all()
+    context = {
+        "events_object": events_object
+    }
+    return render(request, 'events.html', context)
 
 
-#                                           CHECK USER AUTHENTICATION
-#     if request.user.is_authenticated:
-#     ... # Do something for logged-in users.
-# else:
-#     ... # Do something for anonymous users.
+def registerPage(request):
+    form = UserCreationForm()
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {'form': form}
+    return render(request, 'registration.html', context)
