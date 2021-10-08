@@ -5,26 +5,18 @@ from django.shortcuts import (
 )
 
 from django.contrib.auth.forms import UserCreationForm
-# from .models import Events
+from events.models import Event
 
 
 def homepage(request):
     if request.user.is_authenticated:
-        return render(request, 'events.html')
+        return render(request, 'feed.html')
     else:
         return render(request, 'base.html')
 
 
 def hobby(request):
     return render(request, 'hobby.html')
-
-
-# def events(request):
-#     events_object = Events.objects.all()
-#     context = {
-#         "events_object": events_object
-#     }
-#     return render(request, 'events.html', context)
 
 
 def registerPage(request):
