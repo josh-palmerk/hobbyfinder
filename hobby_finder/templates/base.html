@@ -10,11 +10,16 @@
   <body>
     <div class="nes-container is-rounded" id="base_banner">
       <h1 id="banner_title">This is the title banner</h1>
+        {% if user.is_authenticated %}
+          <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+        {% else %}
+          <p>Welcome, new user. Please log in.</p>
+        {% endif %}
     </div>
-    
+
     {% block content %}
     {% endblock %}
-    {% block hobby %}
+    {% block events %}
     {% endblock %}
   </body>
 </html>

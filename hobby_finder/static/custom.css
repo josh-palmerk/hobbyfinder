@@ -1,9 +1,17 @@
 body {
   background-color: #c8c7c3;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
-
+#base_banner {
+  margin-bottom: 80px;
+}
 #banner_title {
   text-align: center;
   margin: 0 auto;
+}
+
+.title1{
+  background-color: #c8c7c3;
 }

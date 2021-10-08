@@ -5,7 +5,7 @@ from django.shortcuts import (
 )
 
 from django.contrib.auth.forms import UserCreationForm
-from .models import Events
+# from .models import Events
 
 
 def homepage(request):
