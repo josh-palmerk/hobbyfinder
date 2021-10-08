@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'custom.css'%}">
   </head>
   <body>
+    <header>
     <div class="nes-container is-rounded" id="base_banner">
       <h1 id="banner_title">Hobby Finder</h1>
         {% if user.is_authenticated %}
@@ -18,6 +19,17 @@
           <p>Welcome, new user. Please log in.</p>
         {% endif %}
     </div>
+    <nav>
+      <ul>
+          <li><a href="feed.html">Home</a></li>
+      </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="buttons">
+        <button type="button" class="nes-btn is-primary" onclick= "document.location.href='feed.html'">Finder</button>
+      </div>
+    </main>
 
     {% block content %}
     {% endblock %}
