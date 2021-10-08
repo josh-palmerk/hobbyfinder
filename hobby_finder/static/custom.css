@@ -3,6 +3,7 @@
 *{
   font-family: 'Press Start 2P', sans-serif;
 }
+
 body {
   background-color: #ffffff;
   max-width: 80%;
@@ -15,11 +16,17 @@ body {
   width: 55%;
 }
 
+#event_banner {
+  margin-bottom: 50px;
+}
+
 #banner_title {
   text-align: center;
   margin: 0 auto;
 }
 
-.title1{
-  background-color: #6b3636;
+
+
+.title-title1{
+  color: rgb(0, 0, 0);
 }
