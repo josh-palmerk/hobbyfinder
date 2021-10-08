@@ -3,7 +3,9 @@ from django.shortcuts import (
    	get_object_or_404,
     render
 )
+
 from django.contrib.auth.forms import UserCreationForm
+from .models import Events
 
 
 def homepage(request):
@@ -18,7 +20,11 @@ def hobby(request):
 
 
 def events(request):
-    return render(request, 'events.html')
+    events_object = Events.objects.all()
+    context = {
+        "events_object": events_object
+    }
+    return render(request, 'events.html', context)
 
 
 def registerPage(request):
