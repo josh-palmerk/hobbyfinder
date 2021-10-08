@@ -19,21 +19,14 @@ def hobby(request):
     return render(request, 'hobby.html')
 
 
-def events(request):
-    events_object = Event.objects.all()
-    context = {
-        "events_object": events_object
-    }
-    return render(request, 'events.html', context)
-
-
 def registerPage(request):
-    form = UserCreationForm()
 
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+    else:
+        form = UserCreationForm()
 
     context = {'form': form}
     return render(request, 'registration.html', context)
