@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
   background-color: #c8c7c3;
   max-width: 80%;
@@ -6,11 +9,16 @@ body {
 
 #base_banner {
   margin: 0 auto;
-  margin-bottom: 200px;
-  height: 50%;
-  width: 50%;
+  margin-bottom: 100px;
+  height: 55%;
+  width: 55%;
+}
+
+body h1 {
+  font-family: "Press+Start+2P";
 }
 #banner_title {
+  font-family: "Press+Start+2P";
   text-align: center;
   margin: 0 auto;
 }
