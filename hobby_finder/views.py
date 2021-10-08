@@ -3,7 +3,7 @@ from django.shortcuts import (
    	get_object_or_404,
     render
 )
-
+from .models import Events
 
 def homepage(request):
     if request.user.is_authenticated:
@@ -18,7 +18,11 @@ def hobby(request):
 
 
 def events(request):
-    return render(request, 'events.html')
+    events_object = Events.objects.all()
+    context = {
+        "events_object": events_object
+    }
+    return render(request, 'events.html', context)
 
 
 #                                           CHECK USER AUTHENTICATION

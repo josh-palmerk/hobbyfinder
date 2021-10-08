@@ -5,4 +5,11 @@
 {% endblock %}
 {% block hobby %}
   <h2>stuff here</h2>
+  {% comment %} if length(events_object) > 0 {
+  {% for event in events_object %}
+    <p>{{ event }}</p>
+  {% endfor %}
+  } else {
+    <p>no events :(</p>
+  } {% endcomment %}
 {% endblock %}
