@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form class="create_event" action="" method="POST" >
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" name="Create Event">
+</form>
+
+{% endblock %}
