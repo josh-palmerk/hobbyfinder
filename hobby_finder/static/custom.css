@@ -6,13 +6,11 @@ body {
 
 #base_banner {
   margin-bottom: 200px;
-  height: 200px;
-  width: 50px;
+  height: 50%;
+  width: 50%;
 }
 #banner_title {
   text-align: center;
-  height: 50%;
-  width: 50%;
   margin: 0 auto;
 }
 
