@@ -6,6 +6,8 @@ body {
 
 #base_banner {
   margin-bottom: 200px;
+  height: 200px;
+  width: 50px;
 }
 #banner_title {
   text-align: center;
@@ -13,6 +15,8 @@ body {
   width: 50px;
   margin: 0 auto;
 }
+
+.nes-container is-rounded
 
 .title1{
   background-color: #c8c7c3;
