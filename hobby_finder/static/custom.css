@@ -5,6 +5,7 @@ body {
 }
 
 #base_banner {
+  margin: 0 auto;
   margin-bottom: 200px;
   height: 50%;
   width: 50%;
