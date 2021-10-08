@@ -1,12 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+*{
+  font-family: 'Press Start 2P', sans-serif;
+}
 body {
-  background-color: #c8c7c3;
+  background-color: #ffffff;
   max-width: 80%;
   margin: 0 auto;
 }
-
 #base_banner {
   margin: 0 auto;
   margin-bottom: 100px;
@@ -14,17 +15,11 @@ body {
   width: 55%;
 }
 
-body h1 {
-  font-family: "Press+Start+2P";
-}
 #banner_title {
-  font-family: "Press+Start+2P";
   text-align: center;
   margin: 0 auto;
 }
 
-.nes-container is-rounded
-
 .title1{
-  background-color: #c8c7c3;
+  background-color: #6b3636;
 }
