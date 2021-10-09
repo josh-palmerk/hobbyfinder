@@ -10,7 +10,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 def homepage(request):
     if request.user.is_authenticated:
-        return render(request, 'events.html')
+        return render(request, 'feed.html')
     else:
         return render(request, 'base.html')
 
