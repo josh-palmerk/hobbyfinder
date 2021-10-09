@@ -7,4 +7,5 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = Event
         fields = "__all__"  # include all fields
-        # exclude = ['isactive'] # exclude example if we dont want something displayed to user
+        # These are automatically filled so exclude from form
+        exclude = ['is_active', 'time_created']
