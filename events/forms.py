@@ -1,3 +1,10 @@
+
+"""
+IMPORTANT: All forms should be placed under 
+hobby_finder.forms  so that  hobby_finder.views
+can grab them properly :)
+"""
+
 from django import forms
 from .models import Event
 

@@ -1,3 +1,11 @@
+
+"""
+IMPORTANT: All views should be placed under 
+hobby_finder.views  so that  hobby_finder.urls
+can grab it properly :)
+"""
+
+
 from django.shortcuts import render
 from .models import Event
 from .forms import EventForm

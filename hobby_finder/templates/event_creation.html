@@ -1,6 +1,28 @@
 {% extends 'base.html' %}
 
+
+
 {% block content %}
+
+
+  
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  <p>4</p>
+  <p>5</p>
+  <p>6</p>
+  <p>7</p>
+  <p>8</p>
+  {%comment%}
+  these are only here to bump down the form on the page so that it becomes interactable.
+  some weird bug prevents it from being clickable unless it's further down on the page
+  probably has to do with the finder and account buttons
+
+  anyway if either of you can fix this it would be much appreciated
+  {%endcomment%}
+
+
   <form class="create_event" action="" method="POST" >
     {% csrf_token %}
     {{form.as_p}}

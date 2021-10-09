@@ -15,7 +15,7 @@ from django.db import transaction
 
 from django.contrib.auth.forms import UserCreationForm
 from events.models import Event
-from .forms import UserForm, ProfileForm
+from .forms import UserForm, ProfileForm, EventForm
 
 def homepage(request):
     if request.user.is_authenticated:
@@ -39,6 +39,29 @@ def registerPage(request):
 
     context = {'form': form}
     return render(request, 'registration.html', context)
+
+
+
+def eventcreation(request):
+
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = EventForm()
+
+    context = {'form': form}
+    return render(request, 'event_creation.html', context)
+
+
+
+def index(request):
+    events_object = Event.objects.all()
+    context = {
+        "events": events_object
+    }
+    return render(request, 'feed.html', context)
 
 
 @login_required
