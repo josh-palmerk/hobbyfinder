@@ -6,3 +6,10 @@
 {% block hobby %}
   <h2>I pitty the fool who tries to learn Django!</h2>
 {% endblock %}
+
+<form method="post">
+  {% csrf_token %}
+  {{ user_form.as_p }}
+  {{ profile_form.as_p }}
+  <button type="submit">Save changes</button>
+</form>
