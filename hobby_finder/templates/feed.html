@@ -2,8 +2,8 @@
 
 {% block content %}
   {% for event in events %}
-    <div class="nes-container with-title">
-      <h2 class="title title1">{{ event.name }}</h2>
+    <div class="nes-container with-title" id="event_banner">
+      <h2 class="title-title1">{{ event.name }}</h2>
       <p>{{ event.description }}</p>
       <p>Location: {{ event.location }}</p>
     </div>

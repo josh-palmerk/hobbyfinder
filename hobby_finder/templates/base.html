@@ -5,19 +5,37 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Hobby Finder</title>
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'custom.css'%}">
   </head>
   <body>
+    <header>
     <div class="nes-container is-rounded" id="base_banner">
-      <h1 id="banner_title">This is the title banner</h1>
+      <h1 id="banner_title">Hobby Finder</h1>
         {% if user.is_authenticated %}
           <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
         {% else %}
           <p>Welcome, new user. Please log in.</p>
         {% endif %}
     </div>
+    </header>
+    <main>
+      <nav class="lists" id= "lists">
+        <ul>
+          <h3>Popular Tags</h3>
+          <li><a href = "">Tag1</a></li>
+          <li><a href = "">Tag2</a></li>
+          <li><a href = "">Tag3</a></li>
+          <li><a href = "">Tag4</a></li>
+          <li><a href = "">Tag5</a></li>
+        </ul>
+        </nav>
+      <div class="buttons">
+        <button type="button" class="nes-btn is-primary" onclick= "document.location.href='/feed'">Finder</button>
+        <button type="button" class="nes-btn is-success" onclick= "document.location.href='/register'">Account</button>
+      </div>
+    </main>
 
     {% block content %}
     {% endblock %}

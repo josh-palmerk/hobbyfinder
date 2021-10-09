@@ -4,7 +4,7 @@
 
 
 {% block content %}
-  <div style="text-align: left;">
+  <div class = "registers"style="text-align: left;">
     <form class="register" action="" method="POST" >
       {% csrf_token %}
       {{form.as_p}}
