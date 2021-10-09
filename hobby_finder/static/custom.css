@@ -5,20 +5,23 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #f8f8f8;
   max-width: 80%;
   margin: 0 auto;
 }
+
 #base_banner {
+  color: rgb(0, 0, 0);
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-bottom: 4px;
   height: 55%;
   width: 55%;
 }
 
 #event_banner {
+  margin: 0 auto;
   margin-bottom: 50px;
-  width: 5%;
+  width: 55%;
 }
 
 #banner_title {
@@ -26,7 +29,12 @@ body {
   margin: 0 auto;
 }
 
-
+.buttons{
+  margin:0 auto;
+  height: 0;
+  padding-left: 38%;
+  margin-bottom: 100px;
+}
 
 .title-title1{
   color: rgb(0, 0, 0);
