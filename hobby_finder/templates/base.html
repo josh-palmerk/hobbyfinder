@@ -14,7 +14,7 @@
     <div class="nes-container is-rounded" id="base_banner">
       <h1 id="banner_title">Hobby Finder</h1>
         {% if user.is_authenticated %}
-          <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+          <p>Logged in as, {{ user.username }}.</p>
         {% else %}
           <p>Welcome, new user. Please log in.</p>
         {% endif %}
