@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>hi</h1>
+    <div style="text-align: left;">
+        <form method="post">
+            {% csrf_token %}
+            <h4>between here</h4>
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <button type="submit">Save changes</button>
+            <h4>and here</h4>
+        </form>
+    </div>
+{% endblock %}
