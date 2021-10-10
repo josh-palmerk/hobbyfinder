@@ -34,7 +34,7 @@ body {
   margin-bottom: 100%;
   margin:0 auto;
   height: 0;
-  padding-left: 38%;
+  padding-left: 32%;
 }
 
 .title-title1{
@@ -59,9 +59,8 @@ ul {
 }
 
 .create_events {
-  padding-top: 20%;
   text-align: center;
   max-width: 75ch;
   position: relative;
-  margin-top: 15%;
+  margin-top: 60%;
 }
