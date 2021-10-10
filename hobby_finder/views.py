@@ -1,4 +1,4 @@
-from django.contrib.auth import login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import (
     HttpResponseRedirect,
    	get_object_or_404,
@@ -13,9 +13,10 @@ from django.contrib.auth.decorators import login_required
 from django.db import transaction
 
 
-from django.contrib.auth.forms import UserCreationForm
-from events.models import Event
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from events.models import Event, User
 from .forms import UserForm, ProfileForm, EventForm
+from django.contrib.auth.views import LoginView, redirect_to_login 
 
 def homepage(request):
     if request.user.is_authenticated:
@@ -64,8 +65,8 @@ def index(request):
     return render(request, 'feed.html', context)
 
 
-@login_required
-@transaction.atomic
+@login_required(login_url='/login/')
+# @transaction.atomic
 def update_profile(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
@@ -84,3 +85,48 @@ def update_profile(request):
         'user_form': user_form,
         'profile_form': profile_form
     })
+
+def logout_request(request):
+    logout(request)
+    messages.info(request, "Logged out successfully!", fail_silently=True)
+    return redirect(homepage)
+   
+
+def login_request(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request=request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}")
+                return redirect('/')
+            else:
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    form = AuthenticationForm()
+    return render(request = request,
+                  template_name = "login.html",
+                  context={"form":form})
+
+
+
+# class AdminLogin(LoginView):
+#     template_name = 'login.html'
+
+
+
+# def login(request):
+#     username = request.POST[User.username]
+#     password = request.POST[User.password]
+#     user = authenticate(request, username=username, password=password)
+#     if user is not None:
+#         login(request, user)
+#         # Redirect to a success page.
+#         redirect(homepage)
+#     else:
+#         # Return an 'invalid login' error message.
+#         redirect(homepage)from django.contrib.auth.views import LoginView 

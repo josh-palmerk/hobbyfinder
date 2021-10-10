@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o same weird clicking issue here</p>
+    <p>o</p>
+    <div class="container">
+        <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+            <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Login</button>
+        </form>
+        Don't have an account? <a href="/register" target="blank"><strong>Register here</strong></a>!
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+if user.is_authenticated
+redirect profile 
+else
+login form
+
+add registration link??
+
+
+{% block events %}
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+    <p>o</p>
+  <div class = "login"style="text-align: left;">
+    <form class="login" action="" method="POST" >
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" name="Create User">
+    </form>
+
+  </div>
+
+
+{% endblock %}{% endcomment %}

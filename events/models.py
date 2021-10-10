@@ -10,7 +10,7 @@ from django.utils import timezone
 class Event(models.Model):
 
     name = models.CharField(max_length=50, null=False, blank=False)
-    description = models.CharField(max_length=300, null=False, blank=False)
+    description = models.TextField(max_length=300, null=False, blank=False)
     location = models.CharField(max_length=100, null=False, blank=False)
     is_active = models.BooleanField(default=True)
     time_created = models.DateTimeField(default=timezone.now)

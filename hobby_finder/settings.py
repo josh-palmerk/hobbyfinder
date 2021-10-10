@@ -54,6 +54,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'hobby_finder.urls'
 
+LOGIN_URL = 'login/'
+LOGIN_REDIRECT_URL = 'feed' # URL redirecting after a successful authentication
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
