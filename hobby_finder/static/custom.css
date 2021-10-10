@@ -65,3 +65,17 @@ ul {
   position: relative;
   margin-top: 15%;
 }
+
+.container {
+  text-align: center;
+  max-width: 75ch;
+  position: relative;
+  margin-top: 15%;
+}
+
+.profile {
+  text-align: center;
+  max-width: 75ch;
+  position: relative;
+  margin-top: 8%;
+}
