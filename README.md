@@ -14,6 +14,6 @@ follow instructions that are displayed
 
 # Contributors
 Kolton Heaps  
-Josh Palmerk  
+Josh Palmer  
 Roberto Reynoso  
 Jake Zalesny  
