@@ -57,3 +57,11 @@ ul {
   position: relative;
   margin-top: 15%;
 }
+
+.create_events {
+  padding-top: 20%;
+  text-align: center;
+  max-width: 75ch;
+  position: relative;
+  margin-top: 15%;
+}
