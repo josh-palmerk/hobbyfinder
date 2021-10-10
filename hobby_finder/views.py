@@ -22,17 +22,19 @@ from django.contrib.auth.views import LoginView, redirect_to_login
 
 def homepage(request):
     if request.user.is_authenticated:
-        user_tags = UserTag.objects.all().filter(user.username == User.username)
-        events = []
-        for tag in user_tags:
-            events.append(EventTag.objects.all().filter(
-                tag.tag.name == EventTag.tag.name))
-        context = {'event': events}
-        return render(request, 'feed.html', context)
-    else:
+        # # user_tags = UserTag.objects.all().filter(user.username == User.username)
+        # events = []
+        # # for tag in user_tags:
+        # #     events.append(EventTag.objects.all().filter(
+        # #         tag.tag.name == EventTag.tag.name))
+        # context = {'event': events}
+        # return render(request, 'feed.html', context)
         events_object = Event.objects.all()
         context = {'event': events_object}
         return render(request, 'feed.html', context)
+    else:
+        return redirect(login_request)
+        
 
 
 def hobby(request):
@@ -97,7 +99,6 @@ def update_profile(request):
         'user_form': user_form,
         'profile_form': profile_form
     })
-<<<<<<< HEAD
 
 def logout_request(request):
     logout(request)
@@ -143,5 +144,3 @@ def login_request(request):
 #     else:
 #         # Return an 'invalid login' error message.
 #         redirect(homepage)from django.contrib.auth.views import LoginView
-=======
->>>>>>> 74f06a7 (Tag logic in events/views.py)
