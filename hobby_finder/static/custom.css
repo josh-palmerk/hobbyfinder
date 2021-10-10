@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f8f8f8;
+  background-color: #f7f7f7;
   max-width: 80%;
   margin: 0 auto;
 }
@@ -35,7 +35,7 @@ body {
   margin-bottom: 100%;
   margin:0 auto;
   height: 0;
-  padding-left: 40%;
+  padding-left: 30%;
 }
 
 .title-title1{
@@ -63,5 +63,5 @@ ul {
   text-align: center;
   max-width: 75ch;
   position: relative;
-  margin-top: 60%;
+  margin-top: 15%;
 }
