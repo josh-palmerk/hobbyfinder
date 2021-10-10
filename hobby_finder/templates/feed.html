@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  {% for event in events %}
+  {% if events %}
+    {% for event in events %}
+      <div class="nes-container with-title" id="event_banner">
+        <h2 class="title-title1">{{ event.name }}</h2>
+        <p>{{ event.description }}</p>
+        <p>Location: {{ event.location }}</p>
+      </div>
+    {% endfor %}
+  {% else %}
+  {% for event in user_tags %}
     <div class="nes-container with-title" id="event_banner">
       <h2 class="title-title1">{{ event.name }}</h2>
       <p>{{ event.description }}</p>

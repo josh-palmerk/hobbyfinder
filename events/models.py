@@ -14,8 +14,7 @@ class Event(models.Model):
     location = models.CharField(max_length=100, null=False, blank=False)
     is_active = models.BooleanField(default=True)
     time_created = models.DateTimeField(default=timezone.now)
-    # creator = models.CharField(max_length=50, null=False, blank=False)
-    # tags = models.ForeignKey(Tags, on_delete=models.CASCADE)
+    creator = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name

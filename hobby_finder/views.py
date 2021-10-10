@@ -4,7 +4,7 @@ from django.shortcuts import (
    	get_object_or_404,
     redirect,
     render
-       
+
 )
 
 # from django.contrib.messages import constants as messages
@@ -15,14 +15,24 @@ from django.db import transaction
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from events.models import Event, User
+from tags.models import Tag, EventTag, UserTag
 from .forms import UserForm, ProfileForm, EventForm
-from django.contrib.auth.views import LoginView, redirect_to_login 
+from django.contrib.auth.views import LoginView, redirect_to_login
+
 
 def homepage(request):
     if request.user.is_authenticated:
-        return render(request, 'feed.html')
+        user_tags = UserTag.objects.all().filter(user.username == User.username)
+        events = []
+        for tag in user_tags:
+            events.append(EventTag.objects.all().filter(
+                tag.tag.name == EventTag.tag.name))
+        context = {'event': events}
+        return render(request, 'feed.html', context)
     else:
-        return render(request, 'base.html')
+        events_object = Event.objects.all()
+        context = {'event': events_object}
+        return render(request, 'feed.html', context)
 
 
 def hobby(request):
@@ -42,7 +52,6 @@ def registerPage(request):
     return render(request, 'registration.html', context)
 
 
-
 def eventcreation(request):
 
     if request.method == 'POST':
@@ -54,7 +63,6 @@ def eventcreation(request):
 
     context = {'form': form}
     return render(request, 'event_creation.html', context)
-
 
 
 def index(request):
@@ -74,10 +82,14 @@ def update_profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, ('Your profile was successfully updated!'), fail_silently=True) #used to be underscores here? just left of string in parentheses
+            # used to be underscores here? just left of string in parentheses
+            messages.success(
+                request, ('Your profile was successfully updated!'), fail_silently=True)
             return redirect(update_profile)
         else:
-            messages.error(request, ('Please correct the error below.'), fail_silently=True) #used to be underscores here? just left of string in parentheses
+            # used to be underscores here? just left of string in parentheses
+            messages.error(
+                request, ('Please correct the error below.'), fail_silently=True)
     else:
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
@@ -85,12 +97,13 @@ def update_profile(request):
         'user_form': user_form,
         'profile_form': profile_form
     })
+<<<<<<< HEAD
 
 def logout_request(request):
     logout(request)
     messages.info(request, "Logged out successfully!", fail_silently=True)
     return redirect(homepage)
-   
+
 
 def login_request(request):
     if request.method == 'POST':
@@ -129,4 +142,6 @@ def login_request(request):
 #         redirect(homepage)
 #     else:
 #         # Return an 'invalid login' error message.
-#         redirect(homepage)from django.contrib.auth.views import LoginView 
+#         redirect(homepage)from django.contrib.auth.views import LoginView
+=======
+>>>>>>> 74f06a7 (Tag logic in events/views.py)
