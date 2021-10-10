@@ -13,7 +13,7 @@ python manage.py runserver
 follow instructions that are displayed
 
 # Contributors
-Kolton Heaps
-Josh Palmerk
-Roberto Reynoso
-Jake Zalesny
+Kolton Heaps  
+Josh Palmerk  
+Roberto Reynoso  
+Jake Zalesny  
