@@ -2,25 +2,24 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from datetime import datetime
+from django.utils import timezone
 
 # Create your models here.
 
 
 class Event(models.Model):
 
-    name = models.CharField(max_length=50)
-    description = models.CharField(max_length=300)
-    location = models.CharField(max_length=100)
+    name = models.CharField(max_length=50, null=False, blank=False)
+    description = models.CharField(max_length=300, null=False, blank=False)
+    location = models.CharField(max_length=100, null=False, blank=False)
     is_active = models.BooleanField(default=True)
-    time_created = models.DateTimeField(default=datetime.now())
+    time_created = models.DateTimeField(default=timezone.now)
+    # creator = models.CharField(max_length=50, null=False, blank=False)
     # tags = models.ForeignKey(Tags, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
 
-
-# TODO: add a creator field to event class ^^
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
