@@ -12,6 +12,7 @@ body {
 }
 
 #base_banner {
+  text-align: center;
   color: rgb(0, 0, 0);
   margin: 0 auto;
   margin-bottom: 4px;
